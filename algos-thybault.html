@@ -8,7 +8,7 @@
 </head>
 <body>
     <script>
-        
+      
         ///// exercice 1 ////
 
         askHour = prompt("Quel est l'heure?");
@@ -100,9 +100,78 @@
                 }
             }
         } */
-
+                                        
         /////////// Exercice 5 /////////////
-        function 
+            function calculerTarif() {
+                let age = prompt("Quel est l'âge du conducteur ?");
+                let permis = prompt("Depuis combien d'années le conducteur a-t-il son permis ?");
+                let accidents = prompt("Combien d'accidents responsables le conducteur a-t-il eu ?");
+                let duree = prompt("Depuis combien d'années le conducteur est-il client chez nous ?");
+
+                let points;
+
+                if (age < 25 && permis < 2) {
+                    points = 1;
+                    if (accidents > 0) {
+                        points = 0;
+                        return;
+                    }
+                } else if (age < 25 && permis >= 2 || age >= 25 && permis < 2) {
+                    points = 2;
+                    if (accidents > 1) {
+                        points = 0;
+                        return;
+                    }
+                } else {
+                    points = 3;
+                    if (accidents > 2) {
+                        points = 0;
+                        return;
+                    }
+                }
+
+                if (duree >= 5) {
+                    switch (points) {
+                        case 3:
+                            points = 4;
+                            break;
+                        case 2:
+                            points = 3;
+                            break;
+                        case 1:
+                            points = 2;
+                            break;
+                    }
+                }
+
+                switch (points) {
+                    case 4:
+                        alert("Vous êtes assurable chez nous sous la couleur bleue");
+                        break;
+                    case 3:
+                        alert("Vous êtes assurable chez nous sous la couleur verte");
+                        break;
+                    case 2:
+                        alert("Vous êtes assurable chez nous sous la couleur orange");
+                        break;
+                    case 1:
+                        alert("Vous êtes assurable chez nous sous la couleur rouge")
+                        break;
+                    case 0:
+                        alert("Nous ne pouvons pas vous assurer.");
+                        break;
+                }
+            }
+
+            calculerTarif()
+
+
+                //// J'arrive pas à faire le dernier exercice
+
+
+
+
+
 
     </script>   
 </body>
