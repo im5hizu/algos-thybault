@@ -31,7 +31,27 @@
 
         calculSeconde(askHour, askMinute, askSecond)
 
-        
+        ///// exercice 3 /////
+
+        function calculerFacture(nbPhotocopies) {
+        // Calculer le coût de la facture en fonction du nombre de photocopies
+        let cout = 0;
+
+        if (nbPhotocopies <= 10) {
+            cout = nbPhotocopies * 0.10;
+        } else if (nbPhotocopies <= 30) {
+            cout = 10 * 0.10 + (nbPhotocopies - 10) * 0.09;
+        } else {
+            cout = 10 * 0.10 + 20 * 0.09 + (nbPhotocopies - 30) * 0.08;
+        }
+
+        // Retourner la facture correspondante en euros
+        return "Le coût de votre facture est de " + cout.toFixed(2) + " €";
+        }
+
+        // Utilisation de la fonction
+        let nbPhotocopies = parseInt(prompt("Combien de photocopies avez-vous faites ?"));
+        console.log(calculerFacture(nbPhotocopies));
     </script>   
 </body>
 </html>
