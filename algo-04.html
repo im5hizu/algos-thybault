@@ -8,15 +8,15 @@
 </head>
 <body>
     <script>
-                ///// Exercice 4 ////
-                function determineTax(ageAsk) {
+        ///// Exercice 4 ////
+        function determineTax(ageAsk) {
             let sexAsk = prompt("Quel est votre sexe?");
-            switch(sexAsk) {
+            switch (sexAsk) {
                 case "homme":
-                    if(ageAsk < 20) {
+                    if (ageAsk < 20) {
                         console.log("Vous ne payez pas d'impôts.")
                         break;
-                    }else {
+                    } else {
                         console.log("Vous payez des impôts.")
                         break;
                     };
@@ -24,11 +24,11 @@
                     if (ageAsk <= 18 || ageAsk <= 35) {
                         console.log("Vous payez des impôts.")
                         break;
-                    }else {
+                    } else {
                         console.log("Vous ne payez pas d'impôts.")
                         break;
                     }
-                default: 
+                default:
                     console.log("Je n'ai rien à te dire")
                     break;
             }
@@ -36,7 +36,7 @@
         let ageAsk = prompt("Quel est votre âge?");
         determineTax(ageAsk)
 
-        /* ////////////////// Variante demandée à openAI ///////// (je lui ai demandé de corriger mon code, 
+        /* ////////////////// Variante demandée à openAI ///////// (je lui ai demandé de corriger mon code,
                                                                     une fois la correction comprise, je lui ai demandé
                                                                     s'"il" aurait fait d'une autre manière, voici le résultat):
         function determineTax(ageAsk, sexAsk) {
