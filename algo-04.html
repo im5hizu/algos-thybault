@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+                ///// Exercice 4 ////
+                function determineTax(ageAsk) {
+            let sexAsk = prompt("Quel est votre sexe?");
+            switch(sexAsk) {
+                case "homme":
+                    if(ageAsk < 20) {
+                        console.log("Vous ne payez pas d'impôts.")
+                        break;
+                    }else {
+                        console.log("Vous payez des impôts.")
+                        break;
+                    };
+                case "femme":
+                    if (ageAsk <= 18 || ageAsk <= 35) {
+                        console.log("Vous payez des impôts.")
+                        break;
+                    }else {
+                        console.log("Vous ne payez pas d'impôts.")
+                        break;
+                    }
+                default: 
+                    console.log("Je n'ai rien à te dire")
+                    break;
+            }
+        }
+        let ageAsk = prompt("Quel est votre âge?");
+        determineTax(ageAsk)
+
+        /* ////////////////// Variante demandée à openAI ///////// (je lui ai demandé de corriger mon code, 
+                                                                    une fois la correction comprise, je lui ai demandé
+                                                                    s'"il" aurait fait d'une autre manière, voici le résultat):
+        function determineTax(ageAsk, sexAsk) {
+            if (sexAsk === "homme") {
+                if (ageAsk < 20) {
+                    console.log("Vous ne payez pas d'impôts.");
+                }else {
+                    console.log("Vous payez des impôts.");
+                }
+            }else if (sexAsk === "femme") {
+                if (ageAsk <= 18 || ageAsk > 35) {
+                    console.log("Vous payez des impôts.");
+                } else {
+                    console.log("Vous ne payez pas d'impôts.");
+                } else {
+                    console.log("Je n'ai rien à te dire.");
+                }
+            }
+        } */
+    </script>
+</body>
+</html>
