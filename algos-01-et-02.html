@@ -5,6 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        header nav ul {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            gap: 15px;
+            list-style: none;
+        }
+    </style>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="algo-05.html">Algo 05</a></li>
+                <li><a href="algo-04.html">Algo 04</a></li>
+                <li><a href="algo-03.html">Algo 03</a></li>
+                <li><a href="algos-01-et-02.html">Algos 1 et 2</a></li>
+            </ul>
+        </nav>
+    </header>
 </head>
 <body>
     <script>
@@ -13,9 +32,14 @@
 
         let askHour = prompt("Quel est l'heure?");
         let askMinute = prompt("Combien de minutes?");
-        let Minute = askMinute - -1;
 
         function calculMinute(askHour, askMinute) {
+            let nextMinute = askMinute - -1;
+            if(nextMinute === 60) {
+                nextMinute === 00;
+                askHour - -1;
+                return;
+            }
             console.log(`L'heure sera ${askHour}:${nextMinute}`);
         }
 
@@ -26,10 +50,11 @@
         let askSecond = prompt("Combien de secondes?");
         
         function calculSeconde(askHour, askMinute, askSecond) {
-            console.log(`L'heure sera ${askHour}:${nextMinute}:${askSecond}`)
+            console.log(`L'heure sera ${askHour}:${askSecond}:${askSecond}`)
         }
 
         calculSeconde(askHour, askMinute, askSecond)
     </script>
+    <li><a href="#algo-05.html"></a></li>
 </body>
 </html>

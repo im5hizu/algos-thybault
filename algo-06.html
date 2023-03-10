@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let candidat1 = prompt("Score du candidat numéro 1:");
+        console.log(candidat1);
+        let candidat2 = prompt("Score du candidat numéro 2:");
+        console.log(candidat2);
+        let candidat3 = prompt("Score du candidat numéro 3:");
+        console.log(candidat3);
+        let candidat4 = prompt("Score du candidat numéro 4:");
+        console.log(candidat4);
+        let scores=[candidat1, candidat2, candidat3, candidat4];
+        console.log(scores)
+
+        function determineSituation(scores){
+            const totalVotes = scores[0] + scores [1] + scores[2] + scores [3];
+            console
+            const candidatPourcentage = (scores[0] / totalVotes) * 100;
+            if (candidatPourcentage >= 50){
+                return "élu par majorité"
+            }else if (parseInt(candidatPourcentage<12.5)){
+                return "battu"
+            }else {
+                const totalAutreCandidat = totalVotes - scores[0];
+                console.log(totalAutreCandidat);
+                for (let i=0; i<totalVotes.length;i++) {
+                    return totalAutreCandidat[i];
+                    console.log(totalAutreCandidat[i]);
+                    if (scores[0]>totalAutreCandidat[1,2,3]) {
+                        return "Ballotage favorable"
+                    }else {
+                        return "Ballotage défavorable"
+                    }
+                }
+                
+            }
+        }
+
+        determineSituation(scores)
+    </script>
+</body>
+</html>

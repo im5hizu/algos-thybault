@@ -5,74 +5,103 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        header nav ul {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            gap: 15px;
+            list-style: none;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="algo-05.html">Algo 05</a></li>
+                <li><a href="algo-04.html">Algo 04</a></li>
+                <li><a href="algo-03.html">Algo 03</a></li>
+                <li><a href="algos-01-et-02.html">Algos 1 et 2</a></li>
+            </ul>
+        </nav>
+    </header>
     <script>
         function calculerTarif() {
             let age = prompt("Quel est l'âge du conducteur ?");
-            let permis = prompt("Depuis combien d'années le conducteur a-t-il son permis ?");
-            let accidents = prompt("Combien d'accidents responsables le conducteur a-t-il eu ?");
-            let duree = prompt("Depuis combien d'années le conducteur est-il client chez nous ?");
+            let dureePermis = prompt("Depuis combien d'années le conducteur a-t-il son permis ?");
+            let nbAccidents = prompt("Combien d'accidents responsables le conducteur a-t-il eu ?");
+            let dureeAssurance = prompt("Depuis combien d'années le conducteur est-il client chez nous ?");
+            let points = 0;
 
-            let points;
-
-            if (age < 25 && permis < 2) {
-                points = 1;
-                if (accidents > 0) {
-                    points = 0;
-                    return;
+            if (age < 25) { // age - de 25 ans
+                if (dureePermis < 2) { // - de 2 ans de permis
+                    switch (nbAccidents) {
+                        case "0":
+                            points++;
+                            break;
+                    }
+                } else { // 2 ans et + de permis
+                    switch (nbAccidents) {
+                        case "0":
+                            points += 2;
+                            break;
+                        case "1":
+                            points++;
+                            break;
+                    }
                 }
-            } else if (age < 25 && permis >= 2 || age >= 25 && permis < 2) {
-                points = 2;
-                if (accidents > 1) {
-                    points = 0;
-                    return;
-                }
-            } else {
-                points = 3;
-                if (accidents > 2) {
-                    points = 0;
-                    return;
+            } else { // 25 ans et +
+                if (dureePermis < 2) { // permis depuis - de 2 ans
+                    switch (nbAccidents) {
+                        case "0":
+                            points += 2;
+                            break;
+                        case "1":
+                            points++;
+                            break;
+                    }
+                } else { // permis depuis 2 ans ou +
+                    switch (nbAccidents) {
+                        case "0":
+                            points += 3;
+                            break;
+                        case "1":
+                            points += 2;
+                            break;
+                        case "2":
+                            points++;
+                            break;
+                    }
                 }
             }
 
-            if (duree >= 5) {
-                switch (points) {
-                    case 3:
-                        points = 4;
-                        break;
-                    case 2:
-                        points = 3;
-                        break;
-                    case 1:
-                        points = 2;
-                        break;
-                }
+            if (dureeAssurance >= 5) { // durée de l'assurance
+                points++;
             }
 
-            switch (points) {
-                case 4:
-                    alert("Vous êtes assurable chez nous sous la couleur bleue");
-                    break;
-                case 3:
-                    alert("Vous êtes assurable chez nous sous la couleur verte");
-                    break;
-                case 2:
-                    alert("Vous êtes assurable chez nous sous la couleur orange");
-                    break;
-                case 1:
-                    alert("Vous êtes assurable chez nous sous la couleur rouge")
-                    break;
-                case 0:
-                    alert("Nous ne pouvons pas vous assurer.");
-                    break;
-            }
+            console.log(points);
+            return points;
         }
 
-        calculerTarif()
+        let points = calculerTarif();
 
-
-                        //// J'arrive pas à faire le dernier exercice
+        switch (points) {
+            case 4:
+                alert("Vous êtes assurable chez nous sous la couleur bleue");
+                break;
+            case 3:
+                alert("Vous êtes assurable chez nous sous la couleur verte");
+                break;
+            case 2:
+                alert("Vous êtes assurable chez nous sous la couleur orange");
+                break;
+            case 1:
+                alert("Vous êtes assurable chez nous sous la couleur rouge");
+                break;
+            default:
+                alert("Nous ne pouvons pas vous assurer.");
+        }                        //// J'arrive pas à faire le dernier exercice
     </script>
-</body>
+    </body>
 </html>
